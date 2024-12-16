@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <title>Template</title>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <h1>{{title}}</h1>
+    <ul>
+        {% for item in forecasts %}
+        <li>Day {{forloop.counter}}: {{item}}
+            {% if item == "Rainy" %}
+            <img src="https://icongr.am/fontawesome/umbrella.svg" alt="umbrella">
+            {% endif %}
+            降水確率:{{rain}}
+            {% endfor %}
+        </li>
+    </ul>
+    <p><a href="{% url 'root' %}">Top page</a></p>
+
+</body>
+
+</html>
